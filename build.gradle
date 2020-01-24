@@ -1,0 +1,88 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        //Android
+        app_compact_version = '1.1.0'
+        android_core_version = '1.1.0'
+        constraint_layout_version = '1.1.3'
+        google_material_version = '1.0.0'
+        lifecycle_version = '2.1.0'
+        paging_version = '2.1.0'
+        navigation_version = "2.2.0"
+
+        //GoogleMap
+        google_map_version = '16.0.0'
+
+        //Kotlin library version
+        kotlin_version = '1.3.61'
+        kotlin_coroutines_version = '1.3.2'
+
+        //others
+        gson_version = '2.8.6'
+        retrofit_version = '2.6.2'
+        logging_interceptor_version = '4.2.1'
+        dagger2_version = '2.25.4'
+        dagger2_complier_version = '2.25.4'
+
+        //Testing
+        junit_version = '4.13'
+        android_runner_version = '1.1.0'
+        android_espresso_version = '3.2.0'
+
+        library = [
+                //Android
+                appCompact             : ('androidx.appcompat:appcompat:' + app_compact_version),
+                androiCore             : ('androidx.core:core-ktx:' + android_core_version),
+                constraintLayout       : ('androidx.constraintlayout:constraintlayout:' + constraint_layout_version),
+                googleMaterial         : ('com.google.android.material:material:' + google_material_version),
+                viewModelAndLiveData   : ('androidx.lifecycle:lifecycle-extensions:' + lifecycle_version),
+                pagingRecyclerView     : ('androidx.paging:paging-runtime-ktx:' + paging_version),
+                navigationFragment     : ('androidx.navigation:navigation-fragment-ktx:' + navigation_version),
+                navigationUi           : ('androidx.navigation:navigation-ui-ktx:' + navigation_version),
+                //Google Maps
+                //Kotlin
+                kotlin                 : ('org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + kotlin_version),
+                kotlinCoroutinesCore   : ('org.jetbrains.kotlinx:kotlinx-coroutines-core:' + kotlin_coroutines_version),
+                kotlinCoroutinesAndroid: ('org.jetbrains.kotlinx:kotlinx-coroutines-android:' + kotlin_coroutines_version),
+                kotlinCoroutinesTest   : ('org.jetbrains.kotlinx:kotlinx-coroutines-test:' + kotlin_coroutines_version),
+                //Others
+                gson                   : ('com.google.code.gson:gson:' + gson_version),
+                retrofit               : ('com.squareup.retrofit2:retrofit:' + retrofit_version),
+                retrofitGsonConverter  : ('com.squareup.retrofit2:converter-gson:' + retrofit_version),
+                loggingInterceptor     : ('com.squareup.okhttp3:logging-interceptor:' + logging_interceptor_version),
+                dagger2                : ('com.google.dagger:dagger:' + dagger2_version),
+                dagger2Complier        : ('com.google.dagger:dagger-compiler:' + dagger2_complier_version),
+                //Testing
+                jUnit                  : ('junit:junit:' + junit_version),
+                androidRunner          : ('androidx.test:runner:' + android_runner_version),
+                androidRules        : ('androidx.test:rules:' + android_runner_version),
+                androidEspresso        : ('androidx.test.espresso:espresso-core:' + android_espresso_version)
+        ]
+    }
+
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

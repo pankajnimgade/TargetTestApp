@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_deals"
+    app:startDestination="@id/dealListFragment">
+
+    <fragment
+        android:id="@+id/dealListFragment"
+        android:name="com.target.dealbrowserpoc.dealbrowser.view.fragments.DealListFragment"
+        android:label="fragment_deal_list"
+        tools:layout="@layout/fragment_deal_list">
+        <action
+            android:id="@+id/action_dealListFragment_to_dealDetailsFragment"
+            app:destination="@id/dealDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dealDetailsFragment"
+        android:name="com.target.dealbrowserpoc.dealbrowser.view.fragments.DealDetailsFragment"
+        android:label="fragment_deal_details"
+        tools:layout="@layout/fragment_deal_details" >
+        <argument
+            android:name="productModel"
+            app:argType="com.target.framework.model.ProductModel"
+            app:nullable="true" />
+    </fragment>
+</navigation>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TargetApplication</string>
+
+    <string name="ship_text">ship</string>
+    <string name="add_to_list_text">add to list</string>
+    <string name="add_to_cart_text">add to cart</string>
+</resources>

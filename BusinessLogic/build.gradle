@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+
+dependencies {
+    implementation library.kotlin
+    implementation library.kotlinCoroutinesCore
+    implementation library.retrofit
+    implementation library.retrofitGsonConverter
+    implementation library.loggingInterceptor
+    //Testing
+    testImplementation library.jUnit
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8

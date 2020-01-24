@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api project(path: ':BusinessLogic')
+    implementation library.kotlin
+    implementation library.kotlinCoroutinesCore
+    implementation library.kotlinCoroutinesAndroid
+    implementation library.appCompact
+    implementation library.androiCore
+    implementation library.googleMaterial
+    implementation library.retrofit
+
+    //Testing
+    testImplementation library.jUnit
+    androidTestImplementation library.androidRunner
+    androidTestImplementation library.androidRules
+    androidTestImplementation library.androidEspresso
+}
